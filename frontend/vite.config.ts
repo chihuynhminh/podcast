@@ -19,5 +19,5 @@ export default defineConfig({
     sourcemap: false,
     minify: 'terser',
   },
-  base: '/Podcast_claude/',
+  base: '/podcast/',
 })
