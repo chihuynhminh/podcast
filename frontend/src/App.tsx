@@ -5,10 +5,11 @@
 
 import { useAuth } from './hooks/useAuth';
 import { LoginPage } from './components/LoginPage';
+import { Dashboard } from './components/Dashboard';
 import './App.css';
 
 function App() {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, logout } = useAuth();
 
   if (isLoading) {
     return (
@@ -22,23 +23,7 @@ function App() {
     return <LoginPage />;
   }
 
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-      <header style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd' }}>
-        <h1>🎵 Music Manager</h1>
-        <p>User: {user.email}</p>
-      </header>
-
-      <main style={{ flex: 1, overflow: 'auto', padding: '1rem' }}>
-        <h2>Welcome to Music Manager</h2>
-        <p>This is a placeholder dashboard. More features coming soon!</p>
-      </main>
-
-      <footer style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderTop: '1px solid #ddd' }}>
-        <p>Music Player (footer component placeholder)</p>
-      </footer>
-    </div>
-  );
+  return <Dashboard user={user} onLogout={logout} />;
 }
 
 export default App;
