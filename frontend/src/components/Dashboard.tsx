@@ -8,6 +8,7 @@ import { User } from '../types';
 import { TopBar } from './TopBar';
 import { Sidebar } from './Sidebar';
 import { MusicPlayer } from './MusicPlayer';
+import { PlaylistsView } from './PlaylistsView';
 
 interface DashboardProps {
   user: User;
@@ -34,14 +35,7 @@ export function Dashboard({ user, onLogout }: DashboardProps) {
 
         {/* Main Content */}
         <div style={styles.contentArea}>
-          {selectedView === 'playlists' && (
-            <div style={styles.contentSection}>
-              <h2 style={styles.contentTitle}>My Playlists</h2>
-              <p style={styles.placeholderText}>
-                Playlist management coming in Phase 2b
-              </p>
-            </div>
-          )}
+          {selectedView === 'playlists' && <PlaylistsView userId={user.id} />}
 
           {selectedView === 'songs' && (
             <div style={styles.contentSection}>
