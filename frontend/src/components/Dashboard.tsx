@@ -4,11 +4,12 @@
  */
 
 import { useState } from 'react';
-import { User } from '../types';
+import { User, Song } from '../types';
 import { TopBar } from './TopBar';
 import { Sidebar } from './Sidebar';
 import { MusicPlayer } from './MusicPlayer';
 import { PlaylistsView } from './PlaylistsView';
+import { SongsView } from './SongsView';
 
 interface DashboardProps {
   user: User;
@@ -17,6 +18,7 @@ interface DashboardProps {
 
 export function Dashboard({ user, onLogout }: DashboardProps) {
   const [selectedView, setSelectedView] = useState<'playlists' | 'songs' | 'shared'>('playlists');
+  const [selectedSong, setSelectedSong] = useState<Song | null>(null);
 
   return (
     <div style={styles.dashboardContainer}>
@@ -38,12 +40,10 @@ export function Dashboard({ user, onLogout }: DashboardProps) {
           {selectedView === 'playlists' && <PlaylistsView userId={user.id} />}
 
           {selectedView === 'songs' && (
-            <div style={styles.contentSection}>
-              <h2 style={styles.contentTitle}>Song Library</h2>
-              <p style={styles.placeholderText}>
-                Song library view coming in Phase 2c
-              </p>
-            </div>
+            <SongsView
+              userId={user.id}
+              onSongSelect={(song) => setSelectedSong(song)}
+            />
           )}
 
           {selectedView === 'shared' && (
