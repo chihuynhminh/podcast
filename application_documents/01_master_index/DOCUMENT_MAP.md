@@ -196,12 +196,14 @@ To update documentation:
 
 ---
 
-**STATUS: Phase 1 (Foundation) COMPLETE ✅**
+**STATUS: Phase 1 Complete ✅ | Phase 2 Complete ✅**
 
 | Phase | Status | Key Files |
 |-------|--------|-----------|
-| **Phase 1: Foundation** | ✅ Complete | IMPL_001, SETUP_001, DEPLOY_001 |
-| Phase 2: Core Features | 🔄 Coming | Dashboard, Playlists, Player |
+| **Phase 1: Foundation** | ✅ Complete | Auth, LoginPage, Supabase setup, CI/CD |
+| **Phase 2a: Layout & Player** | ✅ Complete | Dashboard, TopBar, Sidebar, MusicPlayer |
+| **Phase 2b: Playlist CRUD** | ✅ Complete | PlaylistsView, Modals (Add/Edit/Delete), playlistService |
+| **Phase 2c: Song Library** | ✅ Complete | SongsView, song CRUD modals, songService integration |
 | Phase 3: Persistence | 🔄 Coming | Playback resume, positions |
 | Phase 4: Enhancements | 🔄 Coming | Repeat, shuffle, volume |
 | Phase 5: Advanced | 🔄 Coming | File upload, sharing |
@@ -214,6 +216,6 @@ https://chihuynhminh.github.io/podcast/
 
 ---
 
-**Last Updated:** 2026-03-25 (Phase 1 Complete)
+**Last Updated:** 2026-03-26 (Phase 2c Complete)
 **Status:** Active - Deployed
 **Version Control:** Git (see commit history for all changes)
